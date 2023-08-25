@@ -10,7 +10,6 @@ const App = () => {
   const [requestParams, setRequestParams] = useState({});
 
   const callApi = (requestParams) => {
-    // mock output
     const mockData = {
       count: 2,
       results: [
