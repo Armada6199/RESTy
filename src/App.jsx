@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.scss';
-import Header from './Components/Header/index';
-import Footer from './Components/Footer/index';
-import Form from './Components/Form/index';
-import Results from './Components/Results/index';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Form from './components/Form';
+import Results from './components/Results';
 import axios from 'axios';
 const App = () => {
   const [data, setData] = useState(null);
