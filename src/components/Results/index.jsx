@@ -1,8 +1,12 @@
 
-function Results({props}) {
+function Results(props) {
+const {data,headers}=props.data;
+console.log(headers);
+
   return (
     <section>
-        <pre>{props?.data ? JSON.stringify(props.data, undefined, 2) : null}</pre>
+      <h1>{headers}</h1>
+        <pre>{data ? JSON.stringify(data, undefined, 2) : null}</pre>
       </section>
   )
 }
