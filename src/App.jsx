@@ -13,6 +13,8 @@ const App = () => {
     const axiosRequest={
       url:requestParams.url,
       method:requestParams.method,
+      data:requestParams.body,
+      headers: {'X-Requested-With': 'XMLHttpRequest'},
     };
     const returneData=await axios.request(axiosRequest);
     setRequestParams(requestParams);
@@ -24,10 +26,9 @@ const App = () => {
       <Header />
       <div>Request Method: {requestParams.method}</div>
       <div>URL: {requestParams.url}</div>
+      <div>Body:{requestParams.body}</div>
       <Form handleApiCall={handleApiCall} />
-
       {data?<Results data={data} />:null}
-      
       <Footer />
     </>
   );
