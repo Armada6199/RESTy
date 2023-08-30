@@ -5,9 +5,14 @@
 ## PR
 <https://github.com/Armada6199/RESTy/pull/4>
 
-## Latest 28 PR 
+##LAB 28 PR 
 
 <https://github.com/Armada6199/RESTy/pull/6>
+
+
+## LAB 29 PR
+
+<https://github.com/Armada6199/RESTy/pull/7>
 
 ## Deployed Link 
 
