@@ -2,26 +2,43 @@ $backgroundColor: #efefef;
 $radius: 40%;
 
 form {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
-  width: 60%;
-  height: 350px;
+  width: 500px;
+  height: 400px;
   label {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 1rem 0;
-  }
-  .method{
-    display: block;
-    width: 200px;
-    height: 20px;
-    background-color: aqua;
-    margin: 20px;
-    text-align: center;
-    padding: 10px;
-  }
-  .active_method{
-    background-color: blueviolet;
-    color: black;
-    
+
+    textArea {
+      resize: none;
+      height: 150px;
+      width: 300px;
+    }
+
+    &.methods {
+      span {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 0.2rem;
+        margin-left: 0.2rem;
+        padding: .25rem .5rem;
+        background: #ccc;
+        border-radius: 5px;
+        &:hover, &.active {
+          background:blueviolet;
+          color: black;
+          transition: 0.4s;
+
+        }
+      }
+    }
   }
 }
