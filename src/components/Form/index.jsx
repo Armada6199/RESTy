@@ -5,7 +5,6 @@ function Form ({handleApiCall}) {
   const [ method , setMethod ] = useState('')
   const [ url , setUrl ] = useState('')
   const [ obj , setObj ] = useState('')
-  // const [ selected , setSelected ] = useState(null)
 
   const handleSelectMethod = (e) => {
       setMethod(e.target.id)
@@ -28,7 +27,7 @@ function Form ({handleApiCall}) {
     handleApiCall(formData);
   }
 
-  
+  //test
     return (
       <>
         <form onSubmit={handleSubmit}>
