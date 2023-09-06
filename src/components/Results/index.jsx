@@ -37,18 +37,13 @@ function Results({ data, loading, setReqparams, reqparams, setLoading }) {
         {data && data.data.previous && <button onClick={handlePrevious}>Previous</button>}
       </div>
       {loading ? (
-        // <section data-testid="testing-count">
-        //   <pre ><span>Count:</span> {data ? JSON.stringify(data.data.count, undefined, 2) : null}</pre>
-        //   <pre><span>Results:</span> {data ? JSON.stringify(data.data.results, undefined, 2) : null}</pre>
-        //   <pre><span>Headers:</span> {data ? JSON.stringify(data.headers, undefined, 2) : null}</pre>
-        // </section>
         <section data-testid="section-of-data">
           <pre data-testid="testing-count" ><span>Count:</span> {data ? <JSONPretty id="json-pretty" data={data.data.count} /> : null}</pre>
           <pre><span>Results:</span> {data ? <JSONPretty id="json-pretty" data={data.data.results} /> : null}</pre>
           <pre><span>Headers:</span> {data ? <JSONPretty id="json-pretty" data={data.headers} /> : null}</pre>
         </section>
       ) : (
-        <section>"loading...."</section>
+        <section>loading....</section>
       )}
     </div>
   );
