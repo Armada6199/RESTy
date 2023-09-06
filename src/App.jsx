@@ -1,20 +1,24 @@
-import { useState} from 'react';
+import React, { useEffect, useReducer, } from 'react';
+import axios from 'axios';
 import './App.scss';
-import Header from './components/Header';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import Form from './components/Form';
 import Results from './components/Results';
-import History from './components/History';
-import axios from 'axios';
-const App = () => {
-  const [data, setData] = useState(null);
-  const [requestParams, setRequestParams] = useState({});
-  const [requestHistory,setRequestHistory]=useState([]);
-  const [showHistory,setShowHistory]=useState(false);
+import { initialState, stateReducer } from './utils/reducer';
+import History from './components/History/index';
+
+
+function App() {
+  const [state, dispatch] = useReducer(stateReducer, initialState)
   const handleApiCall = async (requestParams) => {
-    setReqparams(requestParams);
-    if (requestParams.method !== "") setLoading(false)
+    dispatch({ type: 'reqParamsStatus', payload: requestParams });
+    if (requestParams.method !== "") dispatch({ type: 'loadingStatus', payload: false });
   };
+
+  const handleHistoryRenderStatus = () => {
+    dispatch({ type: 'historyRenderStatus', payload: !state.historyRender })
+  }
 
   useEffect(() => {
 
